@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+<div class="container my-5">
+    <h3> Add associate</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{add}" th:object="${associate}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="associateName" class="col-form-label">Name</label> <input type="text" th:field="*{associateName}" class="form-control" id="associateName" placeholder="Name"> <span th:if="${#fields.hasErrors('associateName')}" th:errors="*{associateName}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="associateMail" class="col-form-label">Email</label> <input type="text" th:field="*{associateMail}" class="form-control" id="associateMail" placeholder="Email"> <span th:if="${#fields.hasErrors('associateMail')}" th:errors="*{associateMail}" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="associatePhone" class="col-form-label">Phone No</label> <input type="text" th:field="*{associatePhone}" class="form-control" id="associatePhone" placeholder="PhoneNo"> <span th:if="${#fields.hasErrors('associatePhone')}" th:errors="*{associatePhone}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="skills" class="col-form-label">Skills</label> <input type="text" th:field="*{skills}" class="form-control" id="skills" placeholder="Skills"> <span th:if="${#fields.hasErrors('skills')}" th:errors="*{skills}" class="text-danger"></span>
+                        </div>
+
+                        <!--<input type="text" th:field="*{skills}"
+                               class="form-control mb-4 col-4" placeholder="Associates Skill">
+
+                        <span th:each="skills : ${associate.skills}">
+			<br/>&nbsp;&nbsp;<span th:text="${skills.skill}" />
+		</span> -->
+
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value="Add Associate">
+                        </div>
+
+                        <div class="form-group col-md-8"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

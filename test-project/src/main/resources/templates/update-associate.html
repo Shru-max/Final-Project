@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+
+    <h3>Updation</h3>
+    <hr>
+
+    <p class="h4 mb-4">Save Associate</p>
+
+    <form action="#" th:action="@{/associate/save}"
+          th:object="${associate}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+
+        <input type="hidden" th:field="*{associateId}" />
+<label>NAME</label>
+        <input type="text" th:field="*{associateName}"
+               class="form-control mb-4 col-4" placeholder="Name">
+<label>Mail</label>
+        <input type="text" th:field="*{associateMail}"
+               class="form-control mb-4 col-4" placeholder="Mail">
+<label>Phone</label>
+        <input type="text" th:field="*{associatePhone}"
+               class="form-control mb-4 col-4" placeholder="Phone">
+        <label>Skills</label>
+        <input type="text" th:field="*{skills}"
+               class="form-control mb-4 col-4" placeholder="Skill">
+
+
+
+        <button type="submit" class="btn btn-info col-2">Save</button>
+
+    </form>
+
+    <hr>
+    <a th:href="@{/associate/list}">Back to Associate List</a>
+
+</div>
+</body>
+
+</html>
